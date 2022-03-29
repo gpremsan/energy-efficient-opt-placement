@@ -1,0 +1,29 @@
+# OSX temporary files
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+
+# Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Virtual env
+venv/
+
+# Temporary CPLEX files
+*.lp
+*.clp
+model-files/*
+neos-server/*
+
+# IntellIJ temporary files
+.idea/
+
+# Plot files
+scripts/plot*.png
+
+# Intermediate plots / figures
+figures/*.png
+lagrangian*.txt
+lagrangian*.png
