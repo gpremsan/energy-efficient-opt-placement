@@ -49,7 +49,7 @@ python evaluate_networks.py --help
 An example run for a small network using the one-step ahead heuristic is:
 
 ```commandline
-python3 evaluate_networks.py -b 3 -d 5 -a 5 --min_cpu 10000 --max_cpu 20000 --min_demand 0 --max_demand 300 -m cplex_one_step -s 0 -e 3
+python evaluate_networks.py -b 3 -d 5 -a 5 --min_cpu 10000 --max_cpu 20000 --min_demand 0 --max_demand 300 -m cplex_one_step -s 0 -e 3
 ```
 
 which indicates that a network with 3 base stations, 5 edge nodes and 5 applications are set up. The minimum and maximum 
@@ -59,7 +59,7 @@ station is drawn from Uniform(0, 300). Once the demand vector is generated, the 
 The following is an example command to obtain the Lagrangian solution:
 
 ```commandline
-python3 evaluate_networks.py -b 10 -d 5 -a 5 --min_cpu 10000 --max_cpu 20000 --min_demand 0 --max_demand 300 -m lagrangian --lagrangian_num_parallel 1 --lagrangian_with_benders -s 0 -e 3
+python evaluate_networks.py -b 10 -d 5 -a 5 --min_cpu 10000 --max_cpu 20000 --min_demand 0 --max_demand 300 -m lagrangian --lagrangian_num_parallel 1 --lagrangian_with_benders -s 0 -e 3
 ```
 
 This will run until the gap between the upper bound and lower bound is less than 0.1 percent. At the end of the run, three output files are generated, which plot the intermediate results. Set the `lagrangian_num_parallel` value according to the number of cores that you have on your system; this determines how many subproblems are run in parallel and the number depends on your system configuration.
@@ -71,7 +71,7 @@ Download the traces (2019) for the paper "Serverless in the Wild: Characterizing
 An example run using the downloaded traces is:
 
 ```commandline
-python3 evaluate_networks.py -s 0 -e 96 -b 20 -d 5 -a 20 -m cplex_one_step -azd 1 --use_azure_dataset --azure_dataset_path <PATH_TO_DOWNLOADED_DATASET>
+python evaluate_networks.py -s 0 -e 96 -b 20 -d 5 -a 20 -m cplex_one_step -azd 1 --use_azure_dataset --azure_dataset_path <PATH_TO_DOWNLOADED_DATASET>
 ```
 This first generates a demand vector using the data from the first day (`azd 1`), and solves for the placement and scheduling decisions for the 96 time periods. The network comprises of 20 base stations, 5 edge nodes and 20 applications.
 
